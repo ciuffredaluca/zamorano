@@ -1,0 +1,4 @@
+omegaconf
+pyautogui
+dataclasses-json
+polimorfo
