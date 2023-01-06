@@ -1,0 +1,12 @@
+services:
+  zamorano:
+    build:
+      context: ./
+      target: app
+    ports:
+      - "8501:8501"
+    volumes:
+      - type: bind
+        source: ../datasets
+        target: /datasets
+        read_only: true

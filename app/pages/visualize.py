@@ -47,11 +47,12 @@ else:
 # load anns
 anns = ds.get_annotations(img_idx=image_id)
 # filter
-with st.expander("Confidence thresholds"):
-    thresholds = {}
-    cols = st.columns(2)
-    for idx, (cat_id, cat) in enumerate(ds.cats.items()):
-        thresholds[cat_id] = cols[idx % 2].slider(cat["name"], 0.0, 1.0, 0.01)
+with st.sidebar:
+    with st.expander("Confidence thresholds"):
+        thresholds = {}
+        cols = st.columns(2)
+        for idx, (cat_id, cat) in enumerate(ds.cats.items()):
+            thresholds[cat_id] = cols[idx % 2].slider(cat["name"], 0.0, 1.0, 0.01)
 
 filtered_anns = []
 for ann in anns:

@@ -1,3 +1,4 @@
+streamlit
 omegaconf
 pyautogui
 dataclasses-json
