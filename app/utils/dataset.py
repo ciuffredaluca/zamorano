@@ -48,9 +48,9 @@ def check_dataset_consistency(
             "height",
             "width",
             "date_captured",
+            "data_captured",  # typo in creating coco dataset
             "flickr_url",
             "id",
-            "score",
         },
         "anns": {
             "segmentation",
@@ -61,6 +61,8 @@ def check_dataset_consistency(
             "category_id",
             "id",
             "polygons",
+            "attributes",
+            "score",
         },
     },
 ):
@@ -73,7 +75,7 @@ def check_dataset_consistency(
     for ann_id, ann_meta in ds.anns.items():
         if not set(ann_meta.keys()) <= keys["anns"]:
             raise ValueError(
-                f"Annotation keys in dataset are not consistent with default values {keys['anns']}"
+                f"Annotation keys in dataset are not consistent with default values {keys['anns']}. Got: {set(ann_meta.keys())}"
             )
         for polygons_field in ["polygons", "segmentation"]:
             if polygons_field in ann_meta and not isinstance(
