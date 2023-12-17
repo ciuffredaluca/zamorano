@@ -1,5 +1,5 @@
 # zamorano
-## a stremlit app to explore and review COCO datasets for instance segmentation tasks
+## a streamlit app to explore and review COCO datasets for instance segmentation tasks
 
 This repo contains code for a streamlit app to review instance segmentation tasks.
 
